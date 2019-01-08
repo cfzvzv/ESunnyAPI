@@ -1,6 +1,5 @@
 # ESunnyAPI
-![效果图]https://github.com/l976308589/ESunnyAPI/blob/master/%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E.gif
-
+![效果图](https://github.com/l976308589/ESunnyAPI/blob/master/%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E.gif)
 1.完美封装了易盛信息C++版本的API；
 
 2.实现了断线自动连接功能；
