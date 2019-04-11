@@ -1,6 +1,3 @@
-__project__ = "Yg"
-__version__ = "0.11.213"
-
 from Yg.error import YagConnectionClosed
 from Yg.error import YagAddressError
 from Yg.password import register
