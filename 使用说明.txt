@@ -1,0 +1,113 @@
+1.Account.txt是授权账号
+2.Config.txt中每一行为一个参数，分别为需要订阅的合约1、需要订阅的合约2...
+格式为 交易所 类别 商品 合约，例如：
+COMEX F GC 1908
+HKEX F HSI 1906
+3.Redis.txt第一行为host,第二行为post，频道为交易所商品合约
+例如：
+COMEXGC1908
+HKEXHSI1906
+4.运行bat文件，结果存储在Redis的数据库0中，以逗号分割，字段信息如下
+=======
+1.Account.txt鏄巿鏉冭处鍙?
+2.Config.txt涓瘡涓?琛屼负涓?涓弬鏁帮紝鍒嗗埆涓洪渶瑕佽闃呯殑鍚堢害1銆侀渶瑕佽闃呯殑鍚堢害2...
+鏍煎紡涓? 浜ゆ槗鎵? 绫诲埆 鍟嗗搧 鍚堢害锛屼緥濡傦細
+COMEX F GC 1908
+HKEX F HSI 1906
+3.Redis.txt绗竴琛屼负host,绗簩琛屼负post锛岄閬撲负浜ゆ槗鎵?鍟嗗搧鍚堢害
+渚嬪锛?
+COMEXGC1908
+HKEXHSI1906
+4.杩愯bat鏂囦欢锛岀粨鏋滃瓨鍌ㄥ湪Redis鐨勬暟鎹簱0涓紝浠ラ?楀彿鍒嗗壊锛屽瓧娈典俊鎭涓?
+>>>>>>> e40ad44d58406daa86f9b1619019ff8d3487ea18
+ExchangeNo
+CommodityNo
+Contract.ContractNo1
+DateTimeStamp
+QPreClosingPrice
+QPreSettlePrice
+QPrePositionQty
+QOpeningPrice
+QLastPrice
+QHighPrice
+QLowPrice
+QHisHighPrice
+QHisLowPrice
+QLimitUpPrice
+QLimitDownPrice
+QTotalQty
+QTotalTurnover
+QPositionQty
+QAveragePrice
+QClosingPrice
+QSettlePrice
+QLastQty
+QImpliedBidPrice
+QImpliedBidQty
+QImpliedAskPrice
+QImpliedAskQty
+QPreDelta
+QCurrDelta
+QInsideQty
+QOutsideQty
+QTurnoverRate
+Q5DAvgQty
+QPERatio
+QTotalValue
+QNegotiableValue
+QPositionTrend
+QChangeSpeed
+QChangeRate
+QChangeValue
+QSwing
+QTotalBidQty
+QTotalAskQty
+QBidPrice銆丵BidQty銆丵AskPrice銆? QAskQty鍏辫20妗?
+涓枃閲婁箟濡備笅:
+# 	TapAPIContract				Contract;						///< 鍚堢害
+# 	TAPISTR_10					CurrencyNo;						///< 甯佺缂栧彿
+# 	TAPICHAR					TradingState;					///< 浜ゆ槗鐘舵?併??1,闆嗗悎绔炰环;2,闆嗗悎绔炰环鎾悎;3,杩炵画浜ゆ槗;4,浜ゆ槗鏆傚仠;5,闂競
+# 	TAPIDTSTAMP					DateTimeStamp;					///< 鏃堕棿鎴?
+# 	TAPIQPRICE					QPreClosingPrice;				///< 鏄ㄦ敹鐩樹环
+# 	TAPIQPRICE					QPreSettlePrice;				///< 鏄ㄧ粨绠椾环
+# 	TAPIQVOLUME					QPrePositionQty;				///< 鏄ㄦ寔浠撻噺
+# 	TAPIQPRICE					QOpeningPrice;					///< 寮?鐩樹环
+# 	TAPIQPRICE					QLastPrice;						///< 鏈?鏂颁环
+# 	TAPIQPRICE					QHighPrice;						///< 鏈?楂樹环
+# 	TAPIQPRICE					QLowPrice;						///< 鏈?浣庝环
+# 	TAPIQPRICE					QHisHighPrice;					///< 鍘嗗彶鏈?楂樹环
+# 	TAPIQPRICE					QHisLowPrice;					///< 鍘嗗彶鏈?浣庝环
+# 	TAPIQPRICE					QLimitUpPrice;					///< 娑ㄥ仠浠?
+# 	TAPIQPRICE					QLimitDownPrice;				///< 璺屽仠浠?
+# 	TAPIQVOLUME					QTotalQty;						///< 褰撴棩鎬绘垚浜ら噺
+# 	TAPIQPRICE					QTotalTurnover;					///< 褰撴棩鎴愪氦閲戦
+# 	TAPIQVOLUME					QPositionQty;					///< 鎸佷粨閲?
+# 	TAPIQPRICE					QAveragePrice;					///< 鍧囦环
+# 	TAPIQPRICE					QClosingPrice;					///< 鏀剁洏浠?
+# 	TAPIQPRICE					QSettlePrice;					///< 缁撶畻浠?
+# 	TAPIQVOLUME					QLastQty;						///< 鏈?鏂版垚浜ら噺
+# 	TAPIQPRICE					QBidPrice[20];					///< 涔颁环1-20妗?
+# 	TAPIQVOLUME					QBidQty[20];					///< 涔伴噺1-20妗?
+# 	TAPIQPRICE					QAskPrice[20];					///< 鍗栦环1-20妗?
+# 	TAPIQVOLUME					QAskQty[20];					///< 鍗栭噺1-20妗?
+# 	TAPIQPRICE					QImpliedBidPrice;				///< 闅愬惈涔颁环
+# 	TAPIQVOLUME					QImpliedBidQty;					///< 闅愬惈涔伴噺
+# 	TAPIQPRICE					QImpliedAskPrice;				///< 闅愬惈鍗栦环
+# 	TAPIQVOLUME					QImpliedAskQty;					///< 闅愬惈鍗栭噺
+# 	TAPIQPRICE					QPreDelta;						///< 鏄ㄨ櫄瀹炲害
+# 	TAPIQPRICE					QCurrDelta;						///< 浠婅櫄瀹炲害
+# 	TAPIQVOLUME					QInsideQty;						///< 鍐呯洏閲?
+# 	TAPIQVOLUME					QOutsideQty;					///< 澶栫洏閲?
+# 	TAPIQPRICE					QTurnoverRate;					///< 鎹㈡墜鐜?
+# 	TAPIQVOLUME					Q5DAvgQty;						///< 浜旀棩鍧囬噺
+# 	TAPIQPRICE					QPERatio;						///< 甯傜泩鐜?
+# 	TAPIQPRICE					QTotalValue;					///< 鎬诲競鍊?
+# 	TAPIQPRICE					QNegotiableValue;				///< 娴侀?氬競鍊?
+# 	TAPIQDIFF					QPositionTrend;					///< 鎸佷粨璧板娍
+# 	TAPIQPRICE					QChangeSpeed;					///< 娑ㄩ??
+# 	TAPIQPRICE					QChangeRate;					///< 娑ㄥ箙
+# 	TAPIQPRICE					QChangeValue;					///< 娑ㄨ穼鍊?
+# 	TAPIQPRICE					QSwing;							///< 鎸箙
+# 	TAPIQVOLUME					QTotalBidQty;					///< 濮斾拱鎬婚噺
+# 	TAPIQVOLUME					QTotalAskQty;					///< 濮斿崠鎬婚噺
+# 	TapAPIContract				UnderlyContract;				///< 铏氭嫙鍚堢害瀵瑰簲鐨勭湡瀹炲悎绾?
