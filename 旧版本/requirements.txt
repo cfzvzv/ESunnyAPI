@@ -1,4 +1,0 @@
-arrow==0.13.1
-psutil==5.6.1
-sarge==0.1.5.post0
-zipp==0.3.3
