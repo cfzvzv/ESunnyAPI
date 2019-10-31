@@ -1,0 +1,1 @@
+cmd /k "Venv\\Scripts\\python.exe Quote.py"
