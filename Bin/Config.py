@@ -6,7 +6,7 @@ password = '123456'  # 密码
 auth_code = ''  # 授权码，默认为空
 
 # 配置订阅品种
-contracts = ['COMEX F GC 1912', 'COMEX F GC 1910']
+contracts = ['COMEX F GC 2008', 'COMEX F GC 2006']
 
 # 配置发布方式
 
