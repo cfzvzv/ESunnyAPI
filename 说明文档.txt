@@ -1,23 +1,121 @@
-ESunnyAPIÊÇÒ»¿î»ùÓÚC++/PythonµÄÒ×Ê¢ĞÅÏ¢¹Ù·½·â×°¿ªÔ´¿â£¬ÓÃÓÚÒ×Ê¢ĞÅÏ¢µÄĞĞÇé»ñÈ¡ÒÔ¼°½»Ò×¡£ Èç¹ûÄãÔÚ¿ª·¢Ò×Ê¢ĞÅÏ¢³ÌĞòµÄÊ±ºòÓöµ½ÁËÆæÆæ¹Ö¹ÖµÄÎÊÌâ£¬ÇëÊ¹ÓÃQuote.exe£¬ÆäÖĞ´ò°üÁËÏê¾¡µÄ´íÎó´¦Àí£¬¿ÉÒÔ¿ìËÙ¶¨Î»ÎÊÌâ¡£
+ESunnyAPIæ˜¯ä¸€æ¬¾åŸºäºC++/Pythonçš„æ˜“ç››ä¿¡æ¯å®˜æ–¹å°è£…å¼€æºåº“ï¼Œç”¨äºæ˜“ç››ä¿¡æ¯çš„è¡Œæƒ…è·å–ä»¥åŠäº¤æ˜“ã€‚ å¦‚æœä½ åœ¨å¼€å‘æ˜“ç››ä¿¡æ¯ç¨‹åºçš„æ—¶å€™é‡åˆ°äº†å¥‡å¥‡æ€ªæ€ªçš„é—®é¢˜ï¼Œè¯·ä½¿ç”¨Quote.exeï¼Œå…¶ä¸­æ‰“åŒ…äº†è¯¦å°½çš„é”™è¯¯å¤„ç†ï¼Œå¯ä»¥å¿«é€Ÿå®šä½é—®é¢˜ã€‚
 
-×£ºØ ESunnyAPI ÈëÑ¡ GITEE ×îÓĞ¼ÛÖµ¿ªÔ´ÏîÄ¿ GVP
-30sÄÚÉÏÊÖEsunnyAPI£¿
-ÅäÖÃÕËºÅĞÅÏ¢
+ç¥è´º ESunnyAPI å…¥é€‰ GITEE æœ€æœ‰ä»·å€¼å¼€æºé¡¹ç›® GVP
+30så†…ä¸Šæ‰‹EsunnyAPIï¼Ÿ
+é…ç½®è´¦å·ä¿¡æ¯
 ip = '61.163.243.173'
 port = '7171'
-username = 'ES' # ÓÃ»§Ãû
-password = '123456' # ÃÜÂë
-auth_code = '' # ÊÚÈ¨Âë£¬Ä¬ÈÏÎª¿Õ
-ÅäÖÃ¶©ÔÄÆ·ÖÖ
+username = 'ES' # ç”¨æˆ·å
+password = '123456' # å¯†ç 
+auth_code = '' # æˆæƒç ï¼Œé»˜è®¤ä¸ºç©º
+é…ç½®è®¢é˜…å“ç§
 contracts = ['COMEX F GC 1912', 'COMEX F GC 1910']
-ÅäÖÃ·¢²¼·½Ê½
-publish = 0 # 0ÊÇ´òÓ¡;1ÊÇredis;2ÊÇsocket;3ÊÇfile
-ÅäÖÃ·¢²¼ĞÅÏ¢
-Èç¹ûpublish==1,ĞèÒªÅäÖÃredis
+é…ç½®å‘å¸ƒæ–¹å¼
+publish = 0 # 0æ˜¯æ‰“å°;1æ˜¯redis;2æ˜¯socket;3æ˜¯file
+é…ç½®å‘å¸ƒä¿¡æ¯
+å¦‚æœpublish==1,éœ€è¦é…ç½®redis
 redis = {'host': 'localhost', 'port': 6379, 'db': 0, 'password': None }
-Èç¹ûpublish==2,ĞèÒªÅäÖÃsocket
+å¦‚æœpublish==2,éœ€è¦é…ç½®socket
 socket = {'ip': '127.0.0.1', 'port': 8080}
-# ÔËĞĞ
-- ã¼ÀÁ°æ:Ö±½ÓÔËĞĞQuote.exe
-- ÇÚÀÍ°æ:ÔËĞĞQuote.py
-ÓĞÈÎºÎÎÊÌâÇëÁªÏµQQ:976308589;
+# è¿è¡Œ
+- æ…µæ‡’ç‰ˆ:ç›´æ¥è¿è¡ŒQuote.exe
+- å‹¤åŠ³ç‰ˆ:è¿è¡ŒQuote.py
+æœ‰ä»»ä½•é—®é¢˜è¯·è”ç³»QQ:976308589;
+
+è¡Œæƒ…å­—æ®µå¦‚ä¸‹
+ExchangeNo
+CommodityNo
+Contract.ContractNo1
+DateTimeStamp
+QPreClosingPrice
+QPreSettlePrice
+QPrePositionQty
+QOpeningPrice
+QLastPrice
+QHighPrice
+QLowPrice
+QHisHighPrice
+QHisLowPrice
+QLimitUpPrice
+QLimitDownPrice
+QTotalQty
+QTotalTurnover
+QPositionQty
+QAveragePrice
+QClosingPrice
+QSettlePrice
+QLastQty
+QImpliedBidPrice
+QImpliedBidQty
+QImpliedAskPrice
+QImpliedAskQty
+QPreDelta
+QCurrDelta
+QInsideQty
+QOutsideQty
+QTurnoverRate
+Q5DAvgQty
+QPERatio
+QTotalValue
+QNegotiableValue
+QPositionTrend
+QChangeSpeed
+QChangeRate
+QChangeValue
+QSwing
+QTotalBidQty
+QTotalAskQty
+QBidPriceã€QBidQtyã€QAskPriceã€ QAskQtyå…±è®¡20æ¡£
+
+å­—æ®µé‡Šä¹‰å¦‚ä¸‹
+# //! è¡Œæƒ…å…¨æ–‡
+# struct TapAPIQuoteWhole
+# {
+# 	TapAPIContract				Contract;						///< åˆçº¦
+# 	TAPISTR_10					CurrencyNo;						///< å¸ç§ç¼–å·
+# 	TAPICHAR					TradingState;					///< äº¤æ˜“çŠ¶æ€ã€‚1,é›†åˆç«ä»·;2,é›†åˆç«ä»·æ’®åˆ;3,è¿ç»­äº¤æ˜“;4,äº¤æ˜“æš‚åœ;5,é—­å¸‚
+# 	TAPIDTSTAMP					DateTimeStamp;					///< æ—¶é—´æˆ³
+# 	TAPIQPRICE					QPreClosingPrice;				///< æ˜¨æ”¶ç›˜ä»·
+# 	TAPIQPRICE					QPreSettlePrice;				///< æ˜¨ç»“ç®—ä»·
+# 	TAPIQVOLUME					QPrePositionQty;				///< æ˜¨æŒä»“é‡
+# 	TAPIQPRICE					QOpeningPrice;					///< å¼€ç›˜ä»·
+# 	TAPIQPRICE					QLastPrice;						///< æœ€æ–°ä»·
+# 	TAPIQPRICE					QHighPrice;						///< æœ€é«˜ä»·
+# 	TAPIQPRICE					QLowPrice;						///< æœ€ä½ä»·
+# 	TAPIQPRICE					QHisHighPrice;					///< å†å²æœ€é«˜ä»·
+# 	TAPIQPRICE					QHisLowPrice;					///< å†å²æœ€ä½ä»·
+# 	TAPIQPRICE					QLimitUpPrice;					///< æ¶¨åœä»·
+# 	TAPIQPRICE					QLimitDownPrice;				///< è·Œåœä»·
+# 	TAPIQVOLUME					QTotalQty;						///< å½“æ—¥æ€»æˆäº¤é‡
+# 	TAPIQPRICE					QTotalTurnover;					///< å½“æ—¥æˆäº¤é‡‘é¢
+# 	TAPIQVOLUME					QPositionQty;					///< æŒä»“é‡
+# 	TAPIQPRICE					QAveragePrice;					///< å‡ä»·
+# 	TAPIQPRICE					QClosingPrice;					///< æ”¶ç›˜ä»·
+# 	TAPIQPRICE					QSettlePrice;					///< ç»“ç®—ä»·
+# 	TAPIQVOLUME					QLastQty;						///< æœ€æ–°æˆäº¤é‡
+# 	TAPIQPRICE					QBidPrice[20];					///< ä¹°ä»·1-20æ¡£
+# 	TAPIQVOLUME					QBidQty[20];					///< ä¹°é‡1-20æ¡£
+# 	TAPIQPRICE					QAskPrice[20];					///< å–ä»·1-20æ¡£
+# 	TAPIQVOLUME					QAskQty[20];					///< å–é‡1-20æ¡£
+# 	TAPIQPRICE					QImpliedBidPrice;				///< éšå«ä¹°ä»·
+# 	TAPIQVOLUME					QImpliedBidQty;					///< éšå«ä¹°é‡
+# 	TAPIQPRICE					QImpliedAskPrice;				///< éšå«å–ä»·
+# 	TAPIQVOLUME					QImpliedAskQty;					///< éšå«å–é‡
+# 	TAPIQPRICE					QPreDelta;						///< æ˜¨è™šå®åº¦
+# 	TAPIQPRICE					QCurrDelta;						///< ä»Šè™šå®åº¦
+# 	TAPIQVOLUME					QInsideQty;						///< å†…ç›˜é‡
+# 	TAPIQVOLUME					QOutsideQty;					///< å¤–ç›˜é‡
+# 	TAPIQPRICE					QTurnoverRate;					///< æ¢æ‰‹ç‡
+# 	TAPIQVOLUME					Q5DAvgQty;						///< äº”æ—¥å‡é‡
+# 	TAPIQPRICE					QPERatio;						///< å¸‚ç›ˆç‡
+# 	TAPIQPRICE					QTotalValue;					///< æ€»å¸‚å€¼
+# 	TAPIQPRICE					QNegotiableValue;				///< æµé€šå¸‚å€¼
+# 	TAPIQDIFF					QPositionTrend;					///< æŒä»“èµ°åŠ¿
+# 	TAPIQPRICE					QChangeSpeed;					///< æ¶¨é€Ÿ
+# 	TAPIQPRICE					QChangeRate;					///< æ¶¨å¹…
+# 	TAPIQPRICE					QChangeValue;					///< æ¶¨è·Œå€¼
+# 	TAPIQPRICE					QSwing;							///< æŒ¯å¹…
+# 	TAPIQVOLUME					QTotalBidQty;					///< å§”ä¹°æ€»é‡
+# 	TAPIQVOLUME					QTotalAskQty;					///< å§”å–æ€»é‡
+# 	TapAPIContract				UnderlyContract;				///< è™šæ‹Ÿåˆçº¦å¯¹åº”çš„çœŸå®åˆçº¦
+# };
