@@ -11,7 +11,7 @@ auth_code = '' # 授权码，默认为空
 配置订阅品种
 contracts = ['COMEX F GC 1912', 'COMEX F GC 1910']
 配置发布方式
-publish = 0 # 0是打印;1是redis;2是socket;3是file
+publish = 0 # 0是打印;1是redis;2是socket;3是file;4可以生成json文件
 配置发布信息
 如果publish==1,需要配置redis
 redis = {'host': 'localhost', 'port': 6379, 'db': 0, 'password': None }

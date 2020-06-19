@@ -19,7 +19,7 @@
   - contracts = ['COMEX F GC 2006', 'COMEX F GC 2008']
 --------------------
 - **配置发布方式**
-  - publish = 0  # 0是打印;1是redis;2是socket;3是file
+  - publish = 0  # 0是打印;1是redis;2是socket;3是file;4可以生成json文件
 --------------------
 - **配置发布信息**
 - **如果publish==1,需要配置redis**

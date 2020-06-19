@@ -36,6 +36,21 @@ class Publish:
                 name = f"Bin//{''.join(msg[:3])}.txt"
                 Path(name).write_text(','.join(msg))
 
+        elif self.way == 4:  # file_json
+            names = ['ExchangeNo', 'CommodityNo', 'Contract.ContractNo1', 'DateTimeStamp', 'QPreClosingPrice',
+                     'QPreSettlePrice', 'QPrePositionQty', 'QOpeningPrice', 'QLastPrice', 'QHighPrice', 'QLowPrice',
+                     'QHisHighPrice', 'QHisLowPrice', 'QLimitUpPrice', 'QLimitDownPrice', 'QTotalQty', 'QTotalTurnover',
+                     'QPositionQty', 'QAveragePrice', 'QClosingPrice', 'QSettlePrice', 'QLastQty', 'QImpliedBidPrice',
+                     'QImpliedBidQty', 'QImpliedAskPrice', 'QImpliedAskQty', 'QPreDelta', 'QCurrDelta', 'QInsideQty',
+                     'QOutsideQty', 'QTurnoverRate', 'Q5DAvgQty', 'QPERatio', 'QTotalValue', 'QNegotiableValue',
+                     'QPositionTrend', 'QChangeSpeed', 'QChangeRate', 'QChangeValue', 'QSwing', 'QTotalBidQty',
+                     'QTotalAskQty'] + ['QBidPrice', 'QBidQty', 'QAskPrice', 'QAskQty'] * 20
+
+            def send(msg):
+                name = f"Bin\\{''.join(msg[:3])}.txt"
+                content = {_name: _values for _name, _values in zip(names, msg)}
+                Path(name).write_text(str(content).replace("'", '"'))
+
         else:
             send = print
 
