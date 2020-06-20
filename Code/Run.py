@@ -36,7 +36,7 @@ class Publish:
                 name = f"Bin//{''.join(msg[:3])}.txt"
                 Path(name).write_text(','.join(msg))
 
-        elif self.way == 4:  # file_json
+        elif self.way == '4':  # file_json
             names = ['ExchangeNo', 'CommodityNo', 'Contract.ContractNo1', 'DateTimeStamp', 'QPreClosingPrice',
                      'QPreSettlePrice', 'QPrePositionQty', 'QOpeningPrice', 'QLastPrice', 'QHighPrice', 'QLowPrice',
                      'QHisHighPrice', 'QHisLowPrice', 'QLimitUpPrice', 'QLimitDownPrice', 'QTotalQty', 'QTotalTurnover',
