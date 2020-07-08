@@ -1,11 +1,14 @@
 ﻿import socket
 from time import sleep
 
+import arrow as ar
+import requests as req
+from Include.Sarge import ES
+
 import redis
 from Include.Log import log
 from Include.OlConfig import Config
 from Include.Path import Path
-from Include.Sarge import ES
 
 CONFIG = Config().config['root']
 
@@ -121,6 +124,57 @@ def log_es2(r, es2_list):
     return None
 
 
+def get_diff_time():
+    # 根据网络获取时间
+    # 矫正系统时间
+    baidu_time = req.get(r'https://www.baidu.com/').headers['Date']
+    baidu_time = ar.get(baidu_time, 'ddd, DD MMM YYYY HH:mm:ss ZZZ')
+    diff = baidu_time - ar.now()
+    return diff
+
+
+def is_work_day():
+    # 判断是否在工作日
+    # 矫正时间
+    diff = get_diff_time()
+    now_time = ar.now() + diff
+    # 查看是否在休息时间
+    for _time in CONFIG['everyday']:
+        day = now_time.format('YYYY-MM-DD ')
+        begin_time = ar.get(day + _time[0]).replace(tzinfo=now_time.tzinfo)
+        end_time = ar.get(day + _time[1]).replace(tzinfo=now_time.tzinfo)
+
+        if end_time > now_time >= begin_time:
+            sleep_time = end_time.float_timestamp - now_time.float_timestamp
+            print(f'每日休息机制触发，休息{sleep_time}，结束时间{end_time.format("YYYY-MM-DD HH:mm:ss")}')
+
+    for _time in CONFIG['everyweek']:
+        isoweekday = now_time.isoweekday()
+
+        # 是否跨越周
+        if _time[0][0] > _time[1][0]:
+            _time[1][0] += 7
+
+        begin_time = now_time.shift(days=_time[0][0] - isoweekday)
+        begin_time = begin_time.format('YYYY-MM-DD ') + _time[0][1]
+        begin_time = ar.get(begin_time).replace(tzinfo=now_time.tzinfo)
+
+        end_time = now_time.shift(days=_time[1][0] - isoweekday)
+        end_time = end_time.format('YYYY-MM-DD ') + _time[1][1]
+        end_time = ar.get(end_time).replace(tzinfo=now_time.tzinfo)
+
+        if end_time > now_time >= begin_time:
+            sleep_time = end_time.float_timestamp - now_time.float_timestamp
+            print(f'每周休息机制触发，休息{sleep_time}，结束时间{end_time.format("YYYY-MM-DD HH:mm:ss")}')
+
+    for _time in CONFIG['holiday']:
+        begin_time = ar.get(_time[0]).replace(tzinfo=now_time.tzinfo)
+        end_time = ar.get(_time[1]).replace(tzinfo=now_time.tzinfo)
+        if end_time > now_time >= begin_time:
+            sleep_time = end_time.float_timestamp - now_time.float_timestamp
+            print(f'节假日休息机制触发，休息{sleep_time}，结束时间{end_time.format("YYYY-MM-DD HH:mm:ss")}')
+
+
 # 190810优化逻辑
 def get_quote():
     # 分发
@@ -132,6 +186,7 @@ def get_quote():
     # 断线重连，断线重连的时候也要判断是否在有效期内
     _error = 'No log in'
     while 1:
+        is_work_day()
         es2 = log_es2(r, con)
         if es2 is not None:  # 如果es2成功
             _error = loop(es2)
