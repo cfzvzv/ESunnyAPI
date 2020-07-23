@@ -1,1 +1,1 @@
-cmd /k "Venv\\Scripts\\python.exe Quote.py"
+cmd /k "Venv\\Scripts\\activate && python.exe Quote.py"
